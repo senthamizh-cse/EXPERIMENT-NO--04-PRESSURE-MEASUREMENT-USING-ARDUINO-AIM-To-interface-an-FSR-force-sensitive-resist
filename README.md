@@ -60,6 +60,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ### FIGURE-03 CIRCUIT DIAGRAM
 
+![ex 3](https://user-images.githubusercontent.com/113031811/190296151-a7725994-791d-4e3a-8c74-1fb14e8616e3.png)
 
 
 ### PROCEDURE:
@@ -76,14 +77,38 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+
+```
+ *your roll no : 212221040150
+ * your name : senthamizhan.s
+ * department and year : CSE and 2nd year
  
  
+
+
+int sensorvalue=A0;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop()
+{
+  sensorvalue= analogRead(A0);
+  int n=map(sensorvalue,0,466,0,10);
+  delay(100);
+  Serial.print("Raw Values = ");
+  Serial.println(sensorvalue);
+  Serial.print("Force = ");
+  Serial.println(n);
+  delay(100);
+ 
+} 
  
  
- 
+ ```
  
  
  
@@ -95,10 +120,12 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  
  
 
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
+### TABLE -02 
+standard deviation table 
 
-### TABLE -02 standard deviation table 
+![ex 3 2](https://user-images.githubusercontent.com/113031811/190296189-40f404d5-df24-439f-8d07-8507725c2a9a.png)
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
@@ -129,4 +156,5 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 
 
 
-### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+### RESULTS : 
+Arduino uno is interfaced with FSR and output values are indicated on a graph.
